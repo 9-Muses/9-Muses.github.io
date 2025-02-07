@@ -1,89 +1,283 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>File Upload Form</title>
-  <style>
-    body {
-      font-family: Arial, sans-serif;
-      background-color: #f4f4f9;
-      margin: 0;
-      padding: 0;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      height: 100vh;
-    }
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Jacynth Rodriguez | Founder & CEO</title>
+    <meta name="description" content="">
+    <meta name="keywords" content="">
 
-    .upload-container {
-      background: #ffffff;
-      border: 1px solid #ddd;
-      border-radius: 8px;
-      padding: 20px;
-      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-      width: 300px;
-      text-align: center;
-    }
+    <!-- Favicons -->
+    <link rel="icon" href="assets/img/icon.jpeg">
+    <link rel="apple-touch-icon" href="assets/img/icon.jpeg">
 
-    h1 {
-      font-size: 1.5rem;
-      color: #333;
-      margin-bottom: 15px;
-    }
+    <!-- Vendor CSS Files -->
+    <link rel="stylesheet" href="assets/vendor/bootstrap/css/bootstrap.min.css">
+    <link rel="stylesheet" href="assets/vendor/bootstrap-icons/bootstrap-icons.css">
+    <link rel="stylesheet" href="assets/vendor/glightbox/css/glightbox.min.css">
+    <link rel="stylesheet" href="assets/vendor/swiper/swiper-bundle.min.css">
+    
+    <!-- Template Main CSS File -->
+    <link rel="stylesheet" href="assets/css/style.css">
 
-    input[type="file"] {
-      display: block;
-      margin: 15px auto;
-      padding: 10px;
-    }
+    <script>
+      function closeForm() {
+          document.getElementById("myForm").style.display = "none";
+          document.getElementById("successMessage").style.display = "block";
+      }
+    </script>
 
-    button {
-      background: #007bff;
-      color: #fff;
-      border: none;
-      border-radius: 5px;
-      padding: 10px 15px;
-      cursor: pointer;
-      font-size: 1rem;
-    }
-
-    button:hover {
-      background: #0056b3;
-    }
-
-    .message {
-      margin-top: 15px;
-      font-size: 0.9rem;
-      color: #28a745;
-    }
-  </style>
-</head>
-<body>
-  <div class="upload-container">
-    <h1>Upload Your File</h1>
-    <form id="uploadForm">
-      <input type="file" id="fileInput" name="file" required />
-      <button type="submit">Upload</button>
-      <p class="message" id="message"></p>
-    </form>
-  </div>
-
-  <script>
-    const form = document.getElementById('uploadForm');
-    const message = document.getElementById('message');
-
-    form.addEventListener('submit', (e) => {
-      e.preventDefault();
-      const fileInput = document.getElementById('fileInput');
-      if (fileInput.files.length === 0) {
-        message.textContent = "Please select a file!";
-        return;
+    <style>
+      #successMessage {
+          display: none;
+          background-color: #dff0d8;
+          border: 1px solid #d6e9c6;
+          color: #3c763d;
+          padding: 8px;
+          margin-top: 10px;
       }
 
-      const fileName = fileInput.files[0].name;
-      message.textContent = `File "${fileName}" uploaded successfully!`;
-    });
-  </script>
-</body>
+      .progress-bar {
+        width: 0;
+        height: 20px;
+        background-color: #63ce64;
+      }
+    </style>
+  </head>
+
+  <body>
+
+    <!-- ======= Header ======= -->
+    <header id="header" class="fixed-top" style="background-color:#90d5ff; min-height: 75px;">
+      <div class="container d-flex align-items-center justify-content-between">
+        <!-- 9 Muses Logo -->
+        <a href="index.html"><img src="assets/img/icon.jpeg" alt="Profile Image" class="img-fluid b-shadow-a" style="border-radius: 50%; width: 75px; height: 75px; object-fit: contain;"></a>
+        <!-- Navigation Menu -->
+        <nav id="navbar" class="navbar">
+          <ul class="d-flex align-items-center list-unstyled m-0">
+            <li><a class="nav-link scrollto mx-3 scrollto" href="index.html"><b>Home</b></a></li>
+            <li><a class="nav-link scrollto mx-3 scrollto" href="index.html#services"><b>Services</b></a></li>
+            <li><a class="nav-link scrollto mx-3 scrollto" href="index.html#staff"><b>Staff</b></a></li>
+            <li><a class="nav-link scrollto mx-3 scrollto" href="index.html#gallery"><b>Gallery</b></a></li>
+            <li><a class="nav-link scrollto mx-3 scrollto" href="index.html#contact"><b>Contact</b></a></li>
+          </ul>
+        </nav>
+        <!-- Social Icon(s) -->
+        <div class="socials">
+          <a href="https://www.linkedin.com/company/9-muses-consulting/" class="me-2">
+            <i class="bi bi-linkedin"></i>
+          </a>
+        </div>
+
+      </div>
+    </header>
+    <!-- End Header -->
+
+    <!-- ======= Spacer Section ======= -->
+    <section id="spacer" class="spacer-section" style="height: 75px; background-color:#;"></section>
+
+    <!-- ======= Hero Section ======= -->
+    <section id="hero" class="hero route bg-image">
+      <div class="overlay-itro"></div>
+      <div class="hero-content">
+        
+        <div class="container text-center">
+          <img src="assets/img/Background/muses-cover.jpg" class="img-fluid" 
+                style="width: 500px; height: 250px; object-fit: cover;" alt="Jacynth Rodriguez">
+          <h1 class="hero-title mb-4"><span class="typed" data-typed-items="Welcome to 9 Muses ..."></span></h1>
+        </div>
+      </div>
+    </section>
+    <!-- End Hero Section -->
+
+    <!-- ======= Spacer Section ======= -->
+    <section id="spacer" class="spacer-section" style="height: 75px; background-color:#90d5ff;"></section>
+
+    <main id="main">
+
+      
+      <!-- ======= Services Section ======= -->
+      <section id="services" class="services-mf pt-5 route">
+        <div class="container">
+          <div class="title-box text-center">
+            <h3 class="title-a">Our Services</h3>
+            <p class="subtitle-a">Bringing creativity and innovation to life</p>
+            <div class="line-mf"></div>
+          </div>
+
+          <div class="row">
+            <!-- Creative Direction -->
+            <div class="col-md-4">
+              <div class="service-box">
+                <span class="ico-circle"><i class="bi bi-lightbulb"></i></span>
+                <h2 class="s-title">Creative Direction</h2>
+                <p>We bring visionary leadership to artistic projects, guiding concepts from ideation to execution.</p>
+              </div>
+            </div>
+
+            <!-- Brand Consulting -->
+            <div class="col-md-4">
+              <div class="service-box">
+                <span class="ico-circle"><i class="bi bi-bar-chart"></i></span>
+                <h2 class="s-title">Brand Consulting</h2>
+                <p>Helping businesses and creators build strong, authentic brands through strategic storytelling.</p>
+              </div>
+            </div>
+
+            <!-- Visual Arts & Design -->
+            <div class="col-md-4">
+              <div class="service-box">
+                <span class="ico-circle"><i class="bi bi-palette"></i></span>
+                <h2 class="s-title">Visual Arts & Design</h2>
+                <p>Crafting stunning visuals, from graphic design to digital art, that capture creativity.</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="row">
+            <!-- Event Curation -->
+            <div class="col-md-4">
+              <div class="service-box">
+                <span class="ico-circle"><i class="bi bi-calendar-event"></i></span>
+                <h2 class="s-title">Event Curation</h2>
+                <p>Organizing and curating memorable, engaging events that showcase creativity, culture, and community.</p>
+              </div>
+            </div>
+
+            <!-- Digital Media Strategy -->
+            <div class="col-md-4">
+              <div class="service-box">
+                <span class="ico-circle"><i class="bi bi-camera-reels"></i></span>
+                <h2 class="s-title">Digital Media Strategy</h2>
+                <p>Helping brands elevate their online presence with effective digital campaigns, content creation, and social media management.</p>
+              </div>
+            </div>
+
+            <!-- Workshops & Coaching -->
+            <div class="col-md-4">
+              <div class="service-box">
+                <span class="ico-circle"><i class="bi bi-chat-dots"></i></span>
+                <h2 class="s-title">Workshops & Coaching</h2>
+                <p>Empowering individuals and teams with tailored workshops and coaching sessions to inspire creativity and personal growth.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+      <!-- End Services Section -->
+
+    <!-- ======= Spacer Section ======= -->
+    <section id="spacer" class="spacer-section" style="height: 75px; background-color:#90d5ff;"></section>
+
+    <!-- ======= Gallery Section ======= -->
+    <section id="gallery" class="gallery-mf sect-pt4 route">
+      <div class="container text-center">
+        <div class="title-box">
+          <h3 class="title-a">Gallery</h3>
+          <p class="subtitle-a">A collection of creative works and artistic expressions.</p>
+          <div class="line-mf"></div>
+        </div>
+
+        <div class="gallery-grid">
+          <div class="gallery-item"><img src="assets/img/gallery1.jpg" alt="Gallery Image 1"></div>
+          <div class="gallery-item"><img src="assets/img/gallery2.jpg" alt="Gallery Image 2"></div>
+          <div class="gallery-item"><img src="assets/img/gallery3.jpg" alt="Gallery Image 3"></div>
+          <div class="gallery-item"><img src="assets/img/gallery4.jpg" alt="Gallery Image 4"></div>
+          <div class="gallery-item"><img src="assets/img/gallery5.jpg" alt="Gallery Image 5"></div>
+          <div class="gallery-item"><img src="assets/img/gallery6.jpg" alt="Gallery Image 6"></div>
+          <div class="gallery-item"><img src="assets/img/gallery7.jpg" alt="Gallery Image 7"></div>
+          <div class="gallery-item"><img src="assets/img/gallery8.jpg" alt="Gallery Image 8"></div>
+          <div class="gallery-item"><img src="assets/img/gallery9.jpg" alt="Gallery Image 9"></div>
+        </div>
+      </div>
+    </section>
+    <!-- End Gallery Section -->
+
+    <!-- ======= Spacer Section ======= -->
+    <section id="spacer" class="spacer-section" style="height: 75px; background-color:#90d5ff;"></section>
+
+
+      <!-- ======= Staff Section ======= -->
+      <section id="staff" class="staff-mf sect-pt4 route">
+        <div class="container text-center">
+          <div class="title-box">
+            <h3 class="title-a">Meet Our Founder</h3>
+            <div class="line-mf"></div>
+          </div>
+
+          <div class="staff-box text-center">
+            <img src="assets/img/ProfilePicture/profimg.jpeg" class="img-fluid rounded-circle" 
+                style="width: 250px; height: 250px; object-fit: cover;" alt="Jacynth Rodriguez">
+            <h5 class="staff-name mt-3">Jacynth Rodriguez</h5>
+            <p class="staff-title text-muted">Founder & CEO <a href="https://www.linkedin.com/in/jacynth-serrano-rodriguez/">
+              <i class="bi bi-linkedin"> </i>
+            </a>
+            <a href="https://www.instagram.com/astoldbyjacynth/?hl=en">
+              <i class="bi bi-instagram"></i>
+            </a>
+              <div class="socials">
+                
+              </div>
+            </div>
+            </p>
+            <p>Jacynth is the Founder & CEO of <b>9 Muses</b>, dedicated to inspiring creativity and artistic expression.</p>
+          </div>
+          
+      </section>
+      <!-- End Staff Section -->
+
+
+
+    <!-- ======= Spacer Section ======= -->
+    <section id="spacer" class="spacer-section" style="height: 75px; background-color: transparent;"></section>
+
+    <!-- ======= Contact Section ======= -->
+      <section id="contact" class="paralax-mf bg-image" style="background-image: url(assets/img/contact-bg.jpg)">
+        <div class="overlay-mf"></div>
+        <div class="container text-center">
+          <h5>Contact Information</h5>
+          <p>Email: <span class="bi bi-envelope"></span> <a href="mailto:astoldbyjacynth@gmail.com">astoldbyjacynth@gmail.com</a></li>
+          </p>
+        </div>
+      </section>
+      <!-- End Contact Section -->
+
+    </main>
+
+
+
+    <!-- ======= Footer ======= -->
+    <section id="spacer" class="spacer-section" style="height: 75px; background-color:#90d5ff;">
+    <footer class="text-center py-3">
+      <p>&copy; 2025 <i><b>9 Muses</b></i>. All Rights Reserved.</p>
+    </footer>
+
+    </section>
+    <!-- End Footer Section -->
+    <!-- Vendor JS Files -->
+    <script src="assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+    <script src="assets/vendor/glightbox/js/glightbox.min.js"></script>
+    <script src="assets/vendor/swiper/swiper-bundle.min.js"></script>
+    <script src="assets/vendor/typed.js/typed.umd.js"></script>
+    <script src="assets/js/main.js"></script>
+    <script>
+      document.addEventListener("DOMContentLoaded", function () {
+        let lastScrollTop = 0;
+        const header = document.getElementById("header");
+    
+        window.addEventListener("scroll", function () {
+          let scrollTop = window.pageYOffset || document.documentElement.scrollTop;
+    
+          if (scrollTop > lastScrollTop) {
+            // Scrolling Down: Hide Header
+            header.classList.add("hidden-header");
+          } else {
+            // Scrolling Up: Show Header
+            header.classList.remove("hidden-header");
+          }
+          lastScrollTop = scrollTop;
+        });
+      });
+    </script>
+  </body>
 </html>
